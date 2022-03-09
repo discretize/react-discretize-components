@@ -1,6 +1,5 @@
 import { Box, Paper, useMediaQuery, useTheme } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
-import { GatsbyImage } from 'gatsby-plugin-image';
 import Skills from './Skills';
 import Legends from './Legends';
 import Armor from './Armor';
@@ -64,7 +63,7 @@ const Character = ({
           flexDirection="column"
           justifyContent="space-between"
         >
-          {imageData && <GatsbyImage image={imageData} alt="Profession Image" />}
+          {imageData && <img srcSet={imageData} alt="Profession" />}
 
           {(skillsPropsAPI || legendsPropsAPI) && (
             <Paper
