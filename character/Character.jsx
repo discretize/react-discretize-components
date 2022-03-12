@@ -9,6 +9,7 @@ import Consumables from './Consumables';
 import Weapons from './Weapons';
 import AssumedBuffs from './AssumedBuffs';
 import HelperIcon from '../HelperIcon';
+import { ResponsiveImage } from '../../ResponsiveImage';
 
 const useStyles = makeStyles()((theme) => ({
   section: {
@@ -18,6 +19,12 @@ const useStyles = makeStyles()((theme) => ({
     borderRadius: 0,
     boxShadow:
       '0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 5px 8px 0px rgb(0 0 0 / 14%), 0px 1px 14px 0px rgb(0 0 0 / 12%)',
+  },
+  image: {
+    display: 'flex',
+    flex: '0.7 0.2 300px',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
 }));
 
@@ -47,7 +54,12 @@ const Character = ({
         </Box>
       )}
       <Box display="flex" flexWrap="wrap" justifyContent="space-between">
-        <Box flex="0 0 250px" display="flex" flexDirection="column" justifyContent="space-between">
+        <Box
+          flex="0 0 250px"
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
           <Paper elevation={0} className={classes.section}>
             <Armor {...armorPropsAPI} />
           </Paper>
@@ -63,11 +75,19 @@ const Character = ({
           flexDirection="column"
           justifyContent="space-between"
         >
-          {imageData && <img srcSet={imageData} alt="Profession" />}
+          {imageData && (
+            <ResponsiveImage
+              className={classes.image}
+              meta={imageData}
+              alt="Profession"
+            />
+          )}
 
           {(skillsPropsAPI || legendsPropsAPI) && (
             <Paper
-              style={big ? { maxWidth: 390, alignSelf: 'center' } : { maxWidth: 390 }}
+              style={
+                big ? { maxWidth: 390, alignSelf: 'center' } : { maxWidth: 390 }
+              }
               elevation={0}
               className={classes.section}
             >
@@ -77,7 +97,12 @@ const Character = ({
           )}
         </Box>
 
-        <Box flex="0 0 250px" display="flex" flexDirection="column" justifyContent="space-between">
+        <Box
+          flex="0 0 250px"
+          display="flex"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
           <Paper elevation={0} className={classes.section}>
             <Attributes profession={profession} data={attributes} />
           </Paper>
