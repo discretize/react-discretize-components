@@ -2,6 +2,18 @@ import { Paper } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import React from 'react';
 
+declare module '@mui/material/styles/createPalette' {
+  interface Palette {
+    embossed: string;
+    start: string;
+  }
+
+  interface PaletteOptions {
+    embossed?: string;
+    star?: string;
+  }
+}
+
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -15,9 +27,10 @@ const theme = createTheme({
       light: '#FF8B66',
       dark: '#B24D2C',
     },
+    embossed: '#2a2c31',
+
     background: {
       default: '#2f3136',
-      embossed: '#2a2c31',
       paper: '#26292e',
     },
     text: {
@@ -230,8 +243,11 @@ export default createTheme(theme, {
     },
     MuiAutocomplete: {
       defaultProps: {
-        PaperComponent: ({ children }) => (
-          <Paper elevation={3} sx={{ background: theme.palette.background.paper }}>
+        PaperComponent: ({ children }: { children: React.ReactElement }) => (
+          <Paper
+            elevation={3}
+            sx={{ background: theme.palette.background.paper }}
+          >
             {children}
           </Paper>
         ),

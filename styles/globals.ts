@@ -1,6 +1,7 @@
+import { css } from '@emotion/react';
 import theme from './muiTheme';
 
-export default {
+export default css({
   body: {
     cursor: `url('/images/cursors/default.png'), default`,
   },
@@ -22,7 +23,7 @@ export default {
 
   'code, samp': {
     color: theme.palette.common.white,
-    backgroundColor: theme.palette.background.embossed,
+    backgroundColor: theme.palette.embossed,
     padding: `${theme.spacing(0.25)} ${theme.spacing(0.75)}`,
     border: `1px solid ${theme.palette.divider}`,
     borderRadius: theme.shape.borderRadius,
@@ -80,4 +81,4 @@ export default {
     zIndex: 1501,
     height: 3,
   },
-};
+});
