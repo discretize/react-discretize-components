@@ -9,7 +9,7 @@ import Consumables from './Consumables';
 import Weapons from './Weapons';
 import AssumedBuffs from './AssumedBuffs';
 import HelperIcon from '../HelperIcon';
-import { ResponsiveImage } from '../../ResponsiveImage';
+import { ResponsiveImage } from '../ResponsiveImage';
 
 const useStyles = makeStyles()((theme) => ({
   section: {
