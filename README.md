@@ -1,3 +1,6 @@
+# THIS REPOSITORY MOVED [HERE](https://github.com/discretize/discretize-ui)
+
+
 react-discretize-components contains shared react components for all discretize projects. For example usage please refer to the gear-optimizer repository. At the moment this library will only work in gatsby projects.
 
 ## Installation
